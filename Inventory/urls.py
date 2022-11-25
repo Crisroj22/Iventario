@@ -13,6 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
+from Inventory.settings import *
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from firstApp import views
@@ -30,4 +33,4 @@ urlpatterns = [
     path('eliminar/<int:id>', views.eliminar),
     path('actualizar/<int:id>', views.actualizar),
     path('validacion/',views.verificacion, name="validacion")
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
