@@ -29,7 +29,7 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 SECRET_KEY = 'django-insecure-5jzop^dt-3_joic$npobrcwc&d&#2&ko7_f8byod+-26p3@k+)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -137,14 +137,3 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = reverse_lazy('validacion')
 LOGOUT_REDIRECT_URL = '/'
 
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
-STATIC_TMP = os.path.join(BASE_DIR,'static')
-
-os.makedirs(STATIC_TMP, exist_ok=True)
-os.makedirs(STATIC_ROOT, exist_ok=True)
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR,'static'),
-)
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFileStorage'
