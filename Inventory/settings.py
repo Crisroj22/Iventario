@@ -80,13 +80,15 @@ WSGI_APPLICATION = 'Inventory.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+hostname = os.environ['DBHOST]
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_gestion_inventory',
-        'USER': 'root',
-        'PASSWORD': '22102001'
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ['DBNAME],
+        'HOST': hostname + ".postgres.database.azure.com",
+        'USER': os.environ['DBUSER],
+        'PASSWORD': os.environ['DBPASS]
         
     }
 }
