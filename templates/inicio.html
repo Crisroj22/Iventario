@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/stylos.css">
+    <title>Inicio</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .header{
+            width: 100%;
+            height: 80px;
+            background: black;
+            position: fixed;
+            z-index: 10;
+            top: 0;
+            left: 0;
+            box-shadow: 0px 1px 10px 
+            rgba(0,0,0,0.5);
+        }
+        
+        .container{
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        .logo{
+            float: left;
+            line-height: 75px;
+        }
+        
+        .logo h1{
+            color: white;
+            font-weight: 400;
+            font-size: 50px;
+            position: relative;
+            left: 100px;
+        }
+        
+        .men{
+            float: right;
+            line-height: 75px;
+        }
+        
+        .men a{
+            color:white;
+            text-decoration: none;
+            display: inline-block;
+            padding: 10px 20px;
+            line-height: normal;
+            font-size: 20px;
+            transition: all 500ms ease;
+        }
+        
+        .men a:hover{
+            color:greenyellow;
+            border-bottom: 4px solid greenyellow;
+        }
+        
+        
+        
+        
+        /*BARRA LATERAL*/
+        #icono-menu{
+            width: 120px;
+            height: 120px;
+            position: left;
+            background-color: #491d1d;
+            top: 0px;
+            left: 0px;
+            vertical-align: top;
+            cursor: pointer;
+        }
+        
+        .icono-menu{
+            margin: 99px 40px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .cont-menu{
+            background-color: rgb(109, 109, 109);
+            box-shadow: 2px 0px 5px 2px greenyellow;
+            width: 400px;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all .5s ease;
+        }
+        
+        .active{
+            transform: translate(-600px);
+        }
+        
+        .cont-menu ul{
+            padding: 100px 0px 20px 0px;
+            list-style: none;
+        }
+        
+        .cont-menu ul li{
+            position: relative;
+            top: 150px;
+            color: white;
+            display: block;
+            font-size: 25px;
+            text-decoration: none;
+            padding: 20px 50px;
+            cursor: pointer;
+        }
+        
+        .cont-menu ul li:hover{
+            background-color:greenyellow;
+            color:black;
+        }
+        
+        
+        
+        
+        
+        
+        
+        .cover{
+            width: 100%;
+            padding-bottom: 60px;
+            margin-top: 100px;
+        
+        }
+        
+        .container__cover{
+            max-width: 1200px;
+            margin:auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+        
+        .cover .container__info{
+            max-width: 400px;
+            margin-top: 40px;
+            z-index: 2;
+        }
+        
+        
+        .cover h1{
+            max-width: 400px;
+            font-size: 60px;
+            font-weight: 900px;
+            color: #373737;
+        }
+        
+        .cover h2{
+            font-size: 60px;
+            font-weight: 900;
+            color: greenyellow;
+            margin-top: -30px;
+        }
+        
+        .cover p{
+            margin-top: 10px;
+            color: #373737;
+        }
+        
+        .cover input[type="button"]{
+            padding: 10px 40px;
+            margin-top: 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            color: rgb(0, 0, 0);
+            background: greenyellow;
+            border-radius: 20px;
+            box-shadow: 1px 1px 30px -5px #060606;
+            cursor:pointer;
+            transition: box-shadow 500ms;
+        }
+        
+        .cover input[type="button"]:hover{
+            box-shadow: 1px 1px 30px -5px #43424283;
+        }
+        
+        .container__vector{
+            position: relative;
+        }
+        
+        .container__vector img{
+            position:absolute;
+            top: 0px;
+            bottom: 10px;
+            right: 0px;
+            width: 500px;
+            animation: move_vector 6s ease-in-out infinite;
+        }
+        
+        
+        @keyframes move_vector{
+            0%{
+                transform: translateY(10px)
+            }
+            25%{
+                transform: translateY(-10px)
+            }
+            100%{
+                transform: translateY(10px)
+            }
+        }
+        
+        
+        
+        /* Cartas */
+        .container__card{
+            max-width: 1200px;
+            padding: 20px;
+            padding-bottom: 40px;
+            margin: auto;
+            margin-top: 60px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .card{
+            width: 300px;
+            position: relative;
+            margin: 20px;
+        }
+        
+        .icon{
+            width: 100%;
+            height: 220px;
+            background: whitesmoke;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        #i{
+            width: 150px; 
+            height: 150px;
+        }
+        
+        .info__description{
+            width: 100%;
+            height: 220px;
+            color: #6f6e6e;
+            background: greenyellow;
+            padding: 20px;
+            margin-top: -220;
+        }
+        
+        .info__description p{
+            font-size: 14px;
+            margin-top: 10px;
+            display: -webkit-box;
+            display: -moz-box;
+            display: box;
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            box-orient:vertical;
+            -webkit-line-clamp: 5;
+            line-clamp: 5;
+            overflow: hidden;
+        }
+        
+        .info__description input{
+            margin-top: 20px;
+            padding: 10px 40px;
+            background: rgb(0, 0, 0);
+            color: white;
+            font-weight: 500;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 1px 1px 30px -5px whitesmoke;
+            transition: box-shadow 300ms;
+        }
+        
+        .info__description input:hover{
+            box-shadow: 1px 1px 30px -5px rgb(232, 232, 232);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="icono-menu" style="position: relative;">
+        <img src="" id="icono-menu">
+    </div>
+
+    <div class="cont-menu active" id="menu">
+        <ul>
+            <li> Inicio </li>
+            <li> Stock </li>
+            <li> Agregar </li>
+        </ul>
+    </div>
+
+
+    <header class="header">
+        <div class="conteiner">
+            <div class="logo">
+                <h1>Bodega CCL</h1>
+            </div>
+            <nav class="men">
+                <a href="#">Inicio</a>
+                <a href="#">Contacto</a>
+                <a href="../logout">Cerrar sesion</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="" style="text-align:justify; color:black; font-size:80px;left: 0px;margin-top:70px">LISTADO DE PRODUCTOS</div>
+    
+                {% if productos %}
+                <table class="table table-bordered" style="font-size:50px;left: 0px;margin-top:70px;">
+                    <thead>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>SKU</th>
+                        <th>Stock</th>
+                        <th>Cod_producto</th>
+                        <th>Descripcion</th>
+                        <th>Faltante</th>
+                        <th>Vendido</th>
+                        <th>Descuento</th>
+                        <th>valor_un</th>
+                        <th>categoria</th>
+                    </thead>
+                    <tbody>
+                        {%for producto in productos %}
+                        <tr>
+                            <td>{{ producto.id }}</td>
+                            <td>{{ producto.nombre }}</td>
+                            <td>{{ producto.SKU }}</td>
+                            <td>{{ producto.cod_producto }}</td>
+                            <td>{{ producto.descripcion }}</td>
+                            <td>{{ producto.faltante  }}</td>
+                            <td>{{ producto.vendido  }}</td>
+                            <td>{{ producto.descuento  }}</td>
+                            <td>{{ producto.descuento  }}</td>
+                            <td>{{ producto.valor_unitario  }}</td>
+                            <td>{{ producto.cat  }}</td>
+                            <td><a href="/actualizar/{{ producto.id }}" class="btn btn-warning btn-sm" style="font-size:40px">Editar<i class="bi bi-pencil"></i></td>
+                            <td><a href="/eliminar/{{ producto.id }}" class="btn btn-danger btn-sm" style="font-size:40px"><i class="bi bi-trash" >Eliminar</i></td>
+                            
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+                {% else %}
+                    <div class="alert alert-info" style="font-size:40px">No existen Productos en la base de datos</div>
+                {%endif%}
+                <a href="../agregarProductos" class="btn btn-info float-end">AGREGAR PRODUCTOS</a>
+                
+                
+            </div>
+
+
+
+    <script>const iconoMenu = document.querySelector('#icono-menu'),
+        menu = document.querySelector('#menu');
+  
+  iconoMenu.addEventListener('click', (e) => {
+  
+      // Alternamos estilos para el menú y body
+      menu.classList.toggle('active');
+      document.body.classList.toggle('opacity');
+  });
+  </script>
+
+</body>
+</html>
+

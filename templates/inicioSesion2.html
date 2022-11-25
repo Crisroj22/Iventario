@@ -1,0 +1,23 @@
+{% block navbar%}
+{% endblock %} 
+{% block content %} 
+<form method-"post"> 
+{% csrf_token %} 
+<div class="formulario" >
+  <div class="col-md-6 col-md-offset-3" style="position:absolute;top: 50%;left:50%;transform:translate(-50%, 50%);width:400px;background: rgb(255,255,255); border-radius:10px;"> 
+    <div class="form-group"v >
+         <label for="username" > Nombre de usuario :</label> 
+         <input class-"form-control" type-"text" name="username">
+    </div>
+  </div>
+</div> 
+<div class="row">
+  <div class="col-md-6 col-md-offset-3"> 
+    <div class="form-group">
+         <label for="username" > Contraseña :</label> 
+         <input class-"form-control" type-"password" name="password">
+    </div>
+  </div>
+</div> 
+</form>
+{% endblock %}
