@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'django-inventario'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5CF8697CAEAE45AF9A6FD0487FE28663 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A28A325C0B584B5D846EF4168900C3AC }}
