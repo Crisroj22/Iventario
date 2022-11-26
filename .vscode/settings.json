@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/41d07ba7-520d-4058-9e0b-cd5e5aa7d0d4/AppServices/subscriptions/41d07ba7-520d-4058-9e0b-cd5e5aa7d0d4/resourceGroups/demo_app/providers/Microsoft.Web/sites/django-Inventario",
+    "appService.deploySubpath": "."
+}

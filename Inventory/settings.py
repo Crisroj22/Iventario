@@ -20,6 +20,7 @@ from django.urls import reverse_lazy
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
+CSRF_TRUSTED_ORIGINS = ['https://django-inventario.azurewebsites.net/']
 
 
 # Quick-start development settings - unsuitable for production
@@ -30,8 +31,7 @@ SECRET_KEY = 'django-insecure-5jzop^dt-3_joic$npobrcwc&d&#2&ko7_f8byod+-26p3@k+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['django-inventario.azurewebsites.net']
 
 
 # Application definition
@@ -83,11 +83,12 @@ WSGI_APPLICATION = 'Inventory.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_gestion_inventory',
-        'USER': 'root',
-        'PASSWORD': '22102001'
-        
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'django',
+        'USER': 'django',
+        'HOST':'inventario.postgres.database.azure.com',
+        'PASSWORD': 'Cristopher22',
+        'OPTIONS': {"sslmode": "require"},
     }
 }
 
@@ -137,14 +138,5 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = reverse_lazy('validacion')
 LOGOUT_REDIRECT_URL = '/'
 
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
-STATIC_TMP = os.path.join(BASE_DIR,'static')
-
-os.makedirs(STATIC_TMP, exist_ok=True)
-os.makedirs(STATIC_ROOT, exist_ok=True)
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR,'static'),
-)
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFileStorage'
+STATICFILES_STORAGE = 'whitenoise.storageCompressedManifestStaticFilesStorage'
+STATIC_ROOT = BASE_DIR / 'staticfiles'

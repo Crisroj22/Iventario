@@ -33,4 +33,4 @@ urlpatterns = [
     path('eliminar/<int:id>', views.eliminar),
     path('actualizar/<int:id>', views.actualizar),
     path('validacion/',views.verificacion, name="validacion")
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
